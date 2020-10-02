@@ -15,7 +15,7 @@
 
 /*
  *  +++++++++++++++++++++++++++++++++++++++++++++++++++++
- *  functions to set up initial listening socket
+ *  functions regarding listening socket
  *  +++++++++++++++++++++++++++++++++++++++++++++++++++++
  */
 
@@ -34,6 +34,13 @@ void moebius::listen_for_connections(int listening_socket_fd, int backlog)
 {
     int listen_success = listen(listening_socket_fd, backlog);
     if (listen_success < 0) throw SocketListenException();
+}
+
+int moebius::accept_connection(int listening_socket, struct sockaddr_in address, int address_length)
+{
+    int connected_socket = accept(listening_socket, (struct sockaddr *)&address, (socklen_t*)&address_length);
+    if (connected_socket < 0) throw AcceptConnectionException();
+    return connected_socket;
 }
 
 /*
@@ -69,13 +76,6 @@ void moebius::close_socket(int socket_desc)
 {
     int result = close(socket_desc);
     if(result < 0) throw moebius::CloseSocketException();
-}
-
-int moebius::accept_connection(int listening_socket, struct sockaddr_in address, int address_length)
-{
-    int connected_socket = accept(listening_socket, (struct sockaddr *)&address, (socklen_t*)&address_length);
-    if (connected_socket < 0) throw AcceptConnectionException();
-    return connected_socket;
 }
 
 moebius::Message moebius::receive_from_socket(int socket_fd, int buffer_size)
