@@ -18,7 +18,32 @@ add_library(
         src/utilities/sockets/sockets.cpp
         src/TCPClient/tcpClient.cpp
         src/TCPClient/tcpClient.h
-        src/TCPClient/tcpClientConstants.h src/utilities/message/message.cpp src/utilities/message/message.h src/utilities/http/httpMessages.cpp src/utilities/http/httpMessages.h src/utilities/http/httpHeaders.cpp src/utilities/http/httpHeaders.h src/utilities/map/map.cpp src/utilities/map/map.h tests/utilTests/httpHeaderTests.cpp src/utilities/http/httpMethods.cpp src/utilities/http/httpMethods.h src/utilities/http/httpParser.cpp src/utilities/http/httpParser.h src/HTTPServer/HTTPServer.cpp src/HTTPServer/HTTPServer.h src/utilities/response/Responder.cpp src/utilities/response/Responder.h src/utilities/request/Request.cpp src/utilities/request/Request.h src/utilities/tcp/TCPResponder.cpp src/utilities/tcp/TCPRequest.h src/utilities/tcp/TCPRequest.cpp src/utilities/tcp/TCPResponder.h src/utilities/http/HTTPRequest.cpp src/utilities/http/HTTPRequest.h src/utilities/http/HTTPResponder.cpp src/utilities/http/HTTPResponder.h)
+        src/TCPClient/tcpClientConstants.h
+        src/utilities/message/message.cpp
+        src/utilities/message/message.h
+        src/utilities/http/httpMessages.cpp
+        src/utilities/http/httpMessages.h
+        src/utilities/http/httpHeaders.cpp
+        src/utilities/http/httpHeaders.h
+        tests/utilTests/httpHeaderTests.cpp
+        src/utilities/http/httpMethods.cpp
+        src/utilities/http/httpMethods.h
+        src/utilities/http/httpParser.cpp
+        src/utilities/http/httpParser.h
+        src/HTTPServer/HTTPServer.cpp
+        src/HTTPServer/HTTPServer.h
+        src/utilities/response/Responder.cpp
+        src/utilities/response/Responder.h
+        src/utilities/request/Request.cpp
+        src/utilities/request/Request.h
+        src/utilities/tcp/TCPResponder.cpp
+        src/utilities/tcp/TCPRequest.h
+        src/utilities/tcp/TCPRequest.cpp
+        src/utilities/tcp/TCPResponder.h
+        src/utilities/http/HTTPRequest.cpp
+        src/utilities/http/HTTPRequest.h
+        src/utilities/http/HTTPResponder.cpp
+        src/utilities/http/HTTPResponder.h)
 
 add_executable(
         run_tcp_server
