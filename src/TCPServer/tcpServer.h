@@ -41,11 +41,12 @@ namespace moebius {
         void remove_socket(int socket_index);
         void remove_handled_sockets();
         void handle_socket_communication(int socket_index);
-        static Message generate_response(moebius::Message message);
         void accept_new_connections();
         void setup_address();
         void serve();
 
+    protected:
+        virtual Message generate_response(moebius::Message message);
     };
 }
 
